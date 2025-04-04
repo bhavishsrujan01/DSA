@@ -8,9 +8,8 @@ class Solution {
             digits[i] = 0;
         }
     
-        // If we're here, all digits were 9
         int[] result = new int[digits.length + 1];
-        result[0] = 1; // e.g., 999 -> 1000
+        result[0] = 1;
         return result;
     }
     
