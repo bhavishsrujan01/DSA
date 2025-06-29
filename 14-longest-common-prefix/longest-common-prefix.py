@@ -1,13 +1,15 @@
 class Solution(object):
     def longestCommonPrefix(self, strs):
-        min_length = float('inf')
-        for s in strs:
-            if len(s) < min_length:
-                min_length = len(s)
-        i=0
-        while i < min_length :
-            for s in strs:
-                if s[i] != strs[0][i]:
-                    return s[:i]
-            i+=1
-        return s[:i]
+        """
+        :type strs: List[str]
+        :rtype: str
+        """
+        if len(strs) == 0:
+            return ""
+        
+        base = strs[0]
+        for i in range(len(base)):
+            for word in strs[1:]:
+                if (len(word) == i or word[i] != base[i]):
+                    return base[0:i]
+        return base
